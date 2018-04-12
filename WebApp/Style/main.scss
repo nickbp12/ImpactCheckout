@@ -19,11 +19,11 @@ $grey: #a9abac;
 $pink: rgb(235, 83, 105);
 
 input.valError {
-    border: red 1px solid;
+    border: 1px solid red !important; 
 }
 
 input.valSuccess {
-    border: green 1px solid;
+    border: 1px solid green !important;
 }
 
 .bg-white {
@@ -406,6 +406,16 @@ table {
     box-sizing: border-box;
 }
 
+input {
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+    }
+}
+
+.width100 {
+    width: 100%;
+}
+
 .no-padding {
     padding: 0px !important;
 }
@@ -420,6 +430,17 @@ table {
 
 .bg-grey {
     background-color: #e4e2e3;
+}
+
+.checkout-form-input-container input {
+    height: 49.2px;
+    padding: 0.625rem;
+    border: 1px solid rgba(169, 171, 172, .33);
+
+    &:focus {
+        border: 1px solid rgba(169, 171, 172, 1);
+        outline: none;
+    }
 }
 
 .checkout-grid {
@@ -588,7 +609,11 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > div {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: red;
+    background: #eb5369;
+}
+
+label.container {
+    cursor: pointer;
 }
 
 #myMap1 {

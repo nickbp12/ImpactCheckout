@@ -34,49 +34,50 @@
                             <h2>Kundeoplysninger</h2>
                         </div>
                         <div class="checkout-container">
-                            <p class="checkout-main-text p-t2"><strong>Dine oplysninger:</strong></p>
+                            <p class="checkout-main-text m-t2 m-b2"><strong>Dine oplysninger:</strong></p>
                             <div class="checkout-form">
                                 <div class="checkout-form-inputs">
                                     <div class="flex">
-                                        <div class="checkout-form-input-container">
-                                            <label for="navn">Navn*</label>
-                                            <input autofocus required type="text" id="navn" name="Navn" value="@Request["Navn"]" data-val="true" />
-                                        </div>
-                                        <div class="checkout-form-input-container">
-                                            <label for="firmanavn">Evt. Firmanavn</label>
-                                            <input type="text" id="firmanavn" name="Firmanavn" value="@Request["Firmanavn"]" />
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-g">
-                                        <div class="checkout-form-input-container">
-                                            <label for="addresse">Addresse*</label>
-                                            <input required type="text" id="addresse" name="Addresse" value="@Request["Addresse"]" data-val="true" />
-                                        </div>
-                                        <div class="flex">
-                                            <div class="checkout-form-input-container input-container-row input-container-no-inset">
-                                                <div class="checkout-form-input-container">
-                                                    <label for="postnr">Post nr*</label>
-                                                    <input maxlength="4" required type="text" id="postnr" name="Postnr" value="@Request["Postnr"]" data-val="true" />
-                                                </div>
-                                                <div class="checkout-form-input-container">
-                                                    <label for="bynavn">By*</label>
-                                                    <input required readonly type="text" id="bynavn" name="Bynavn" value="@Request["Bynavn"]" data-val="true" />
-                                                </div>
+                                        <div class="width100 m-r2">
+                                            <div class="checkout-form-input-container m-b1">
+                                                <label for="navn">Navn*</label>
+                                                <input autofocus required type="text" id="navn" name="Navn" value="@Request["Navn"]" data-val="true" />
+                                            </div>
+                                            <div class="checkout-form-input-container m-b1">
+                                                <label for="addresse">Addresse*</label>
+                                                <input required type="text" id="addresse" name="Addresse" value="@Request["Addresse"]" data-val="true" />
+                                            </div>
+                                            <div class="checkout-form-input-container m-b1">
+                                                <label for="email">Email*</label>
+                                                <input required type="email" id="email" name="Email" value="@Request["Email"]" data-val="true" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="flex">
-                                        <div class="checkout-form-input-container">
-                                            <label for="email">Email*</label>
-                                            <input required type="email" id="email" name="Email" value="@Request["Email"]" data-val="true" />
+                                        <div class="width100">
+                                            <div class="checkout-form-input-container m-b1">
+                                                <label for="firmanavn">Evt. Firmanavn</label>
+                                                <input type="text" id="firmanavn" name="Firmanavn" value="@Request["Firmanavn"]" />
+                                            </div>
+                                            <div class="flex">
+                                                <div class="checkout-form-input-container input-container-row input-container-no-inset m-b1">
+                                                    <div class="checkout-form-input-container m-r1">
+                                                        <label for="postnr">Post nr*</label>
+                                                        <input maxlength="4" required type="text" id="postnr" name="Postnr" value="@Request["Postnr"]" data-val="true" />
+                                                    </div>
+                                                    <div class="checkout-form-input-container">
+                                                        <label for="bynavn">By*</label>
+                                                        <input required readonly type="text" id="bynavn" name="Bynavn" value="@Request["Bynavn"]" data-val="true" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="checkout-form-input-container m-b1">
+                                                <label for="mobilnr">Mobil nr*</label>
+                                                <input maxlength="8" required type="text" id="mobilnr" name="Mobilnr" value="@Request["Mobilnr"]" data-val="true" />
+                                            </div>
                                         </div>
-                                        <div class="checkout-form-input-container">
-                                            <label for="mobilnr">Mobil nr*</label>
-                                            <input maxlength="8" required type="text" id="mobilnr" name="Mobilnr" value="@Request["Mobilnr"]" data-val="true" />
-                                        </div>
-                                        <span>@Html.ValidationSummary()</span>
+
                                     </div>
                                 </div>
+                                <span>@Html.ValidationSummary()</span>
                             </div>
                         </div>
                     </section>
@@ -166,7 +167,7 @@
                                 <div>
                                     <div>Postnord pakkeboks (34,95 DKK)</div>
                                     <div>Levering til afhentning i pakkeboks</div>
-                                    <div>Leveringstid: 1-3 hverdage</div>   
+                                    <div>Leveringstid: 1-3 hverdage</div>
                                 </div>
                             </div>
 
@@ -187,7 +188,7 @@
                         <button type="button" onclick="loadDoc()">Søg</button>
                         <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
                         <br><br>
-                        <div id="checkout_box_container"></div>
+                        <div id="checkout_box_container_pakkeshops"></div>
 
 
 
@@ -307,7 +308,7 @@
                     <div class="summary-contain no-grid bg-white">
                         <div class="summary no-border">
                             <div class="checkout-header text-a-c border m-b1 no-padding">
-                                <h2 class="m-b1">Order oversigt</h2>
+                                <h2 class="m-b1">Ordre oversigt</h2>
                                 <p class="m-b1">4 varer</p>
                             </div>
                             <div class="border p-b1" data-productID="1">
@@ -612,7 +613,7 @@
                 markers.push(marker);
                 map.fitBounds(bounds);
             }
-            document.getElementById("checkout_box_container").innerHTML = div;
+            document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvmqdXjeCvqLR0o-Ncc29xQ1uWSo4c4c&callback=initMap" async defer></script>

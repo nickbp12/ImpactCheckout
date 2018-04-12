@@ -12,10 +12,10 @@
   src: url("../fonts/Font Awesome 5 Free-Solid-900.otf") format("opentype"); }
 
 input.valError, .valError.counter-plus, .valError.counter-minus {
-  border: red 1px solid; }
+  border: 1px solid red !important; }
 
 input.valSuccess, .valSuccess.counter-plus, .valSuccess.counter-minus {
-  border: green 1px solid; }
+  border: 1px solid green !important; }
 
 .bg-white {
   background-color: white; }
@@ -288,6 +288,12 @@ table {
 * {
   box-sizing: border-box; }
 
+input:-webkit-autofill, .counter-plus:-webkit-autofill, .counter-minus:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important; }
+
+.width100 {
+  width: 100%; }
+
 .no-padding {
   padding: 0px !important; }
 
@@ -299,6 +305,14 @@ table {
 
 .bg-grey {
   background-color: #e4e2e3; }
+
+.checkout-form-input-container input, .checkout-form-input-container .counter-plus, .checkout-form-input-container .counter-minus {
+  height: 49.2px;
+  padding: 0.625rem;
+  border: 1px solid rgba(169, 171, 172, 0.33); }
+  .checkout-form-input-container input:focus, .checkout-form-input-container .counter-plus:focus, .checkout-form-input-container .counter-minus:focus {
+    border: 1px solid #a9abac;
+    outline: none; }
 
 .checkout-grid {
   grid-template-columns: 1fr 400px;
@@ -431,7 +445,10 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > .counter-
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: red; }
+  background: #eb5369; }
+
+label.container {
+  cursor: pointer; }
 
 #myMap1 {
   width: 100%;
