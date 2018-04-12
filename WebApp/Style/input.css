@@ -1,0 +1,6 @@
+﻿input.valError {
+    border: red 3px solid;
+}
+input.valSuccess {
+    border: green 3px solid;
+}
