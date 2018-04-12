@@ -310,9 +310,10 @@ input:-webkit-autofill, .counter-plus:-webkit-autofill, .counter-minus:-webkit-a
   height: 49.2px;
   padding: 0.625rem;
   border: 1px solid rgba(169, 171, 172, 0.33); }
-  .checkout-form-input-container input:focus, .checkout-form-input-container .counter-plus:focus, .checkout-form-input-container .counter-minus:focus {
-    border: 1px solid #a9abac;
-    outline: none; }
+
+input:focus, .counter-plus:focus, .counter-minus:focus {
+  border: 1px solid #a9abac !important;
+  outline: none; }
 
 .checkout-grid {
   grid-template-columns: 1fr 400px;
@@ -449,6 +450,28 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > .counter-
 
 label.container {
   cursor: pointer; }
+
+.checkout-btn {
+  height: 49px;
+  width: 100%;
+  color: white; }
+
+.gls_pakke_soeg {
+  width: 100%; }
+  .gls_pakke_soeg div {
+    padding-right: 33px;
+    width: 65%; }
+    .gls_pakke_soeg div input, .gls_pakke_soeg div .counter-plus, .gls_pakke_soeg div .counter-minus {
+      width: 125px;
+      padding: 0.625rem;
+      color: black;
+      border: 1px solid rgba(169, 171, 172, 0.33); }
+    .gls_pakke_soeg div button {
+      width: 125px;
+      background-color: #eb5369; }
+  .gls_pakke_soeg button {
+    width: 100%;
+    cursor: pointer; }
 
 #myMap1 {
   width: 100%;

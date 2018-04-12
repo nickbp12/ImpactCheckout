@@ -101,7 +101,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/BOI_logo-red.png?i=%7b06ECDC0D-AE8D-43C0-9031-4FAE9AE71018%7d" alt="Bog & Ide Logo" />
                                 </div>
                                 <div>
-                                    <div>Afhent fragtfrit i butik (0,00 DKK)</div>
+                                    <div><strong>Afhent fragtfrit i butik (0,00 DKK)</strong></div>
                                     <div>Du vælger selv i hvilken butik, du ønsker at hente din ordre</div>
                                     <div>Leveringstid: 1-3 hverdage (du modtager en mail/SMS, når ordren ligger klar)</div>
                                 </div>
@@ -117,7 +117,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
                                 </div>
                                 <div>
-                                    <div>GLS (19,00 DKK)</div>
+                                    <div><strong>GLS (19,00 DKK)</strong></div>
                                     <div>Sender til afhentning i over 800 GLS pakkeshops</div>
                                     <div>Leveringstid: 1-3 hverdage</div>
                                 </div>
@@ -133,7 +133,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
                                 </div>
                                 <div>
-                                    <div>GLS erhverv (29,95 DKK)</div>
+                                    <div><strong>GLS erhverv (29,95 DKK)</strong></div>
                                     <div>Sender til virksomhedsadresser</div>
                                     <div>Leveringstid: 1-3 hverdage</div>
                                 </div>
@@ -149,7 +149,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
                                 </div>
                                 <div>
-                                    <div>Postnord (46,95 DKK)</div>
+                                    <div><strong>Postnord (46,95 DKK)</strong></div>
                                     <div>Direkte levering på adressen (privat eller erhverv)</div>
                                     <div>Leveringstid: 1-3 hverdage</div>
                                 </div>
@@ -165,7 +165,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
                                 </div>
                                 <div>
-                                    <div>Postnord pakkeboks (34,95 DKK)</div>
+                                    <div><strong>Postnord pakkeboks (34,95 DKK)</strong></div>
                                     <div>Levering til afhentning i pakkeboks</div>
                                     <div>Leveringstid: 1-3 hverdage</div>
                                 </div>
@@ -184,17 +184,15 @@
                                 Vælg din GLS Pakkeshop
                             </h2>
                         </div>
-                        <input id="ZipInput" type="text" maxlength="4" name="ZipCode" value="" placeholder="Postnr." />
-                        <button type="button" onclick="loadDoc()">Søg</button>
-                        <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
+                        <div class="gls_pakke_soeg flex">
+                            <div class="flex sb">
+                                <input class="checkout-btn" id="ZipInput" type="text" maxlength="4" name="ZipCode" value="" placeholder="Postnr." />
+                                <button class="checkout-btn no-border" type="button" onclick="loadDoc()">Søg</button>
+                            </div>
+                            <button class="checkout-btn no-border" type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
+                        </div>
                         <br><br>
-<<<<<<< HEAD
-                        <div id="checkout_box_container_pakkeshops"></div>
 
-
-
-=======
->>>>>>> fb4b3609f6984d76cc05cb48d83ccef090496227
                         <div id="myMap1"></div>
                         <div id="checkout_box_container_pakkeshops"></div>
 
@@ -221,7 +219,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/betalingskort-new.png?i=%7b91153787-C684-4AF1-A5FD-5ECB5B9CD34A%7d" alt="Betalingskort" />
                                 </div>
                                 <div>
-                                    <div>Betalingskort (0,00 kr)</div>
+                                    <div><strong>Betalingskort (0,00 kr)</strong></div>
                                     <div>Dankort, VISA/Dankort, MasterCard, VisaElektron</div>
                                 </div>
                             </div>
@@ -236,7 +234,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/mobile-pay-logo.png?i=%7b4915B6A9-0AD8-4253-8C2E-B62D6C3D5E3A%7d" alt="Mobilepay" />
                                 </div>
                                 <div>
-                                    <div>MobilePay (7,00 kr.)</div>
+                                    <div><strong>MobilePay (7,00 kr.)</strong></div>
                                     <div>MobilePay</div>
                                 </div>
                             </div>
@@ -251,7 +249,7 @@
                                     <img src="https://www.bog-ide.dk/scommerce/images/gavekort_bog-og-ide.png?i=%7bD4D49845-E774-45DE-839E-F5187A0AA594%7d" alt="Gavekort" />
                                 </div>
                                 <div>
-                                    <div>Gavekort (0,00 kr)</div>
+                                    <div><strong>Gavekort (0,00 kr)</strong></div>
                                     <div>Gavekort med QR-kode</div>
                                 </div>
                             </div>
@@ -399,13 +397,13 @@
                         $("#bynavn").val(resultat);
                         showSuccess($("#bynavn"));
                         hideError($("#bynavn"));
+                        $("#ZipInput").val(inputval);
                     }
                     else {
                         $("#bynavn").val("");
                         showError($("#bynavn"));
                         hideSuccess($("#bynavn"));
                     }
-                    console.log(data);
                 }
             });
         }
@@ -596,26 +594,31 @@
             //var table = "<tr><th>Sted</th><th>Adresse</th><th>By</th></tr>";
             var div = "";
             var x = xmlDoc.getElementsByTagName("PakkeshopData");
-            for (i = 0; i < 3; i++) {
-                div +=
-                    "<div class='checkout_box_radio-button'>" +
-                    "<label class='container'>" +
-                    "<input type='radio' name='checkbox_Pakkeshops' checked='checked' value='Delivery_afhent_i_butik' >" +
-                    "<span class='checkmark'>" + "</span>" +
-                    "</label>" +
-                    "<div><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
-                    "<div><div>" + "Ma-Lø: 08:00 - 21:00" + "</div></div>" + "Sø: 08:00 - 19:00" + "</div></div>";
+            for (i = 0; i < x.length; i++) {
+                if (i < 3) {
+                    div +=
+                        "<div class='checkout_box_radio-button'>" +
+                        "<label class='container'>" +
+                        "<input type='radio' name='checkbox_Pakkeshops' checked='checked' value='Delivery_afhent_i_butik' >" +
+                        "<span class='checkmark'>" + "</span>" +
+                        "</label>" +
+                        "<div><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
+                        "<div><div>" + "Ma-Lø: 08:00 - 21:00" + "</div></div>" + "Sø: 08:00 - 19:00" + "</div></div>";
 
-                var myLatlng = new google.maps.LatLng(x[i].getElementsByTagName("Latitude")[0].childNodes[0].nodeValue, x[i].getElementsByTagName("Longitude")[0].childNodes[0].nodeValue);
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue
+                    var myLatlng = new google.maps.LatLng(x[i].getElementsByTagName("Latitude")[0].childNodes[0].nodeValue, x[i].getElementsByTagName("Longitude")[0].childNodes[0].nodeValue);
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        title: x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue
 
-                });
-                bounds.extend(marker.position);
-                markers.push(marker);
-                map.fitBounds(bounds);
+                    });
+                    bounds.extend(marker.position);
+                    markers.push(marker);
+                    map.fitBounds(bounds);
+                    i + 1;
+                }
+               
+                
             }
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
         }
