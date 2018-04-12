@@ -593,7 +593,6 @@
             //var table = "<tr><th>Sted</th><th>Adresse</th><th>By</th></tr>";
             var div = "";
             var x = xmlDoc.getElementsByTagName("PakkeshopData");
-<<<<<<< HEAD
             for (i = 0; i < x.length; i++) {
                 if (i < 3) {
                     div +=
@@ -617,31 +616,7 @@
                     map.fitBounds(bounds);
                     i + 1;
                 }
-               
-                
-=======
-            for (i = 0; i < 3; i++) {
-                div +=
-                    "<div class='checkout_box_radio-button'>" + "<div>" +
-                    "<label class='container'>" +
-                    "<input type='radio' name='checkbox_Pakkeshops' value='Delivery_afhent_i_butik' >" +
-                    "<span class='checkmark'>" + "</span>" +
-                    "</label>" + "</div>" +
-                    "<div style='width: 55%'><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
-                    "<div style='width: 27%;'><div>" + "Ma-Lø: 08:00 - 21:00" + "</div><div>" + "Sø: 08:00 - 19:00" + "</div></div></div>";
-
-                var myLatlng = new google.maps.LatLng(x[i].getElementsByTagName("Latitude")[0].childNodes[0].nodeValue, x[i].getElementsByTagName("Longitude")[0].childNodes[0].nodeValue);
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue
-
-                });
-                bounds.extend(marker.position);
-                markers.push(marker);
-                map.fitBounds(bounds);
->>>>>>> f64612d41208e38c07faddfa1e3edd6a3ee9e3dc
-            }
+            } 
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").addClass("checkout_box_radio-button--checked");
