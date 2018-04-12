@@ -25,7 +25,7 @@
     <button type="button" onclick="loadDoc()">Søg</button>
     <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
     <br><br>
-    <div id="checkout_box_container_pakkeshops"></div>
+    <div id="checkout_box_container"></div>
 
 
 
@@ -33,7 +33,7 @@
 
 </section>
 
-<script>
+    <script>
         var map;
         var markers = [];
         function initMap() {
@@ -90,7 +90,7 @@
             //var table = "<tr><th>Sted</th><th>Adresse</th><th>By</th></tr>";
             var div = "";
             var x = xmlDoc.getElementsByTagName("PakkeshopData");
-            for (i = 0; i < x.length; i++) {
+            for (i = 0; i < 3; i++) {
                 div +=
                     "<div class='checkout_box_radio-button'>" +
                     "<label class='container'>" +
@@ -111,7 +111,7 @@
                 markers.push(marker);
                 map.fitBounds(bounds);
             }
-            document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
+            document.getElementById("checkout_box_container").innerHTML = div;
         }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvmqdXjeCvqLR0o-Ncc29xQ1uWSo4c4c&callback=initMap" async defer></script>
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvmqdXjeCvqLR0o-Ncc29xQ1uWSo4c4c&callback=initMap" async defer></script>

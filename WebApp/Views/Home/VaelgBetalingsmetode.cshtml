@@ -1,0 +1,141 @@
+﻿
+<style>
+    #checkout_box_container {
+        width: 100%;
+    }
+
+    .checkout_box_radio-button {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        border-top: 1px solid #e4e2e3;
+    }
+    .checkout_box_radio-button:last-child {
+    border-bottom: 1px solid #e4e2e3;
+    }
+
+    div.checkout_box_radio-button > input, div.checkout_box_radio-button > div {
+        margin: 0 10px;
+    }
+
+    .checkout_box_img {
+        width: 50px;
+    }
+
+        .checkout_box_img img {
+            width: 100%;
+            max-height: 50px;
+        }
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 19px;
+        width: 19px;
+        background-color: white;
+        border: 1px solid #999;
+        border-radius: 50%;
+    }
+
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    .container input:checked ~ .checkmark {
+        background-color: white;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .container .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: red;
+    }
+</style>
+
+<section id="checkout-section">
+    <div class="checkout-header">
+        @* Header *@
+        <h2>Vælg Betalingsmetode</h2>
+    </div>
+
+    @* Container *@
+    <div id="checkout_box_container">
+
+        @* Radio button row 1 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_payment" checked="checked" value="Payment_Betalingskort">
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/betalingskort-new.png?i=%7b91153787-C684-4AF1-A5FD-5ECB5B9CD34A%7d" alt="Betalingskort" />
+            </div>
+            <div>
+                <div>Betalingskort (0,00 kr)</div>
+                <div>Dankort, VISA/Dankort, MasterCard, VisaElektron</div>
+            </div>
+        </div>
+
+        @* Radio button row 2 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_payment" value="Payment_Mobilepay" />
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/mobile-pay-logo.png?i=%7b4915B6A9-0AD8-4253-8C2E-B62D6C3D5E3A%7d" alt="Mobilepay" />
+            </div>
+            <div>
+                <div>MobilePay (0,00 kr.)</div>
+                <div>MobilePay</div>
+            </div>
+        </div>
+
+        @* Radio button row 3 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_payment" value="Payment_Gavekort" />
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/gavekort_bog-og-ide.png?i=%7bD4D49845-E774-45DE-839E-F5187A0AA594%7d" alt="Gavekort" />
+            </div>
+            <div>
+                <div>Gavekort (0,00 kr)</div>
+                <div>Gavekort med QR-kode</div>
+            </div>
+        </div>
+    </div>
+
+</section>

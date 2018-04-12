@@ -1,0 +1,46 @@
+﻿@model WebApp.Models.HomeViewModel
+
+<link href="~/Style/flex.css" rel="stylesheet" />
+
+<section id="checkout-section">
+    <div class="checkout-header">
+        <h2>Kundeoplysninger</h2>
+    </div>
+    <div class="checkout-container">
+        <p class="checkout-main-text"><strong>Dine oplysninger:</strong></p>
+        <div class="checkout-form">
+            <div class="checkout-form-inputs">
+                <div class="checkout-form-input-container">
+                    <label for="navn">Navn*</label>
+                    <input autofocus type="text" id="navn" name="navn" />
+                </div>
+                <div class="checkout-form-input-container">
+                    <label for="firmanavn">Evt. Firmanavn</label>
+                    <input type="text" id="firmanavn" name="firmanavn" />
+                </div>
+                <div class="checkout-form-input-container">
+                    <label for="addresse">Addresse*</label>
+                    <input type="text" id="addresse" name="addresse" />
+                </div>
+                <div class="checkout-form-input-container input-container-row input-container-no-inset">
+                    <div class="checkout-form-input-container">
+                        <label for="postnr">Post nr*</label>
+                        <input type="text" id="postnr" name="postnr" />
+                    </div>
+                    <div class="checkout-form-input-container">
+                        <label for="by">By*</label>
+                        <input disabled type="text" id="by" name="by" />
+                    </div>
+                </div>
+                <div class="checkout-form-input-container">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" />
+                </div>
+                <div class="checkout-form-input-container">
+                    <label for="mobilnr">Mobil nr*</label>
+                    <input type="text" id="mobilnr" name="mobilnr" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
