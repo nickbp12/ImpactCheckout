@@ -206,8 +206,8 @@
                     }
 
                     .container .checkmark:after {
-                        top: 2px;
-                        left: 2px;
+                        top: 1px;
+                        left: 1px;
                         width: 15px;
                         height: 15px;
                         border-radius: 50%;
@@ -228,6 +228,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_delivery" checked="checked" value="Delivery_afhent_i_butik">
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/BOI_logo-red.png?i=%7b06ECDC0D-AE8D-43C0-9031-4FAE9AE71018%7d" alt="Bog & Ide Logo" />
@@ -243,6 +244,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_glsPakkeshop" />
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
@@ -258,6 +260,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed" />
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
@@ -273,7 +276,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed_privat" />
-
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
@@ -289,6 +292,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_postNPakkeboks" />
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
@@ -321,6 +325,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_payment" checked="checked" value="Payment_Betalingskort">
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/betalingskort-new.png?i=%7b91153787-C684-4AF1-A5FD-5ECB5B9CD34A%7d" alt="Betalingskort" />
@@ -335,6 +340,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_payment" value="Payment_Mobilepay" />
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/mobile-pay-logo.png?i=%7b4915B6A9-0AD8-4253-8C2E-B62D6C3D5E3A%7d" alt="Mobilepay" />
@@ -349,6 +355,7 @@
                         <div class="checkout_box_radio-button">
                             <label class="container">
                                 <input type="radio" name="checkbox_payment" value="Payment_Gavekort" />
+                                <span class="checkmark"></span>
                             </label>
                             <div class="checkout_box_img">
                                 <img src="https://www.bog-ide.dk/scommerce/images/gavekort_bog-og-ide.png?i=%7bD4D49845-E774-45DE-839E-F5187A0AA594%7d" alt="Gavekort" />
@@ -370,7 +377,7 @@
                         <div class="checkout-form">
                             <div class="checkout-form-inputs">
                                 <div class="checkout-form-input-container">
-                                    <input type="radio" name="klub" id="klub" />
+                                    <input type="checkbox" name="klub" id="klub" />
                                     <label for="klub">Ja tak, jeg vil gerne v&#230;re medlem af klub Bog &#38; idé </label>
                                     <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
                                     <a href="#">L&#230;s mere</a>
@@ -466,6 +473,7 @@
             </div>
         </form>
     </div>
+    <script src="~/Scripts/main.js"></script>
     <script>
         var inputval = $("#postnr").val();
         var pattern = /\d{4}/;

@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Style\flex.css" />
     <Content Include="Style\input.css" />
     <Content Include="Style\main.css">
