@@ -108,7 +108,7 @@
                             </div>
 
                             @* Radio button row 2 *@
-                            <div class="checkout_box_radio-button">
+                            <div class="checkout_box_radio-button checkout_box_radio-button--checked">
                                 <label class="container">
                                     <input type="radio" name="checkbox_delivery" checked="checked" value="Delivery_afhent_i_glsPakkeshop" />
                                     <span class="checkmark"></span>
@@ -188,13 +188,7 @@
                         <button type="button" onclick="loadDoc()">Søg</button>
                         <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
                         <br><br>
-<<<<<<< HEAD
-                        <div id="checkout_box_container_pakkeshops"></div>
 
-
-
-=======
->>>>>>> fb4b3609f6984d76cc05cb48d83ccef090496227
                         <div id="myMap1"></div>
                         <div id="checkout_box_container_pakkeshops"></div>
 
@@ -212,7 +206,7 @@
                         <div id="checkout_box_container">
 
                             @* Radio button row 1 *@
-                            <div class="checkout_box_radio-button">
+                            <div class="checkout_box_radio-button checkout_box_radio-button--checked"   >
                                 <label class="container">
                                     <input type="radio" name="checkbox_payment" checked="checked" value="Payment_Betalingskort">
                                     <span class="checkmark"></span>
@@ -287,10 +281,10 @@
                         <div id="checkout_box_container">
 
                             @* Checkout row 1 *@
-                            <div class="checkout_box_checkbox">
+                            <div class="checkout_box_checkbox m-b2 m-t2">
                                 <label>
-                                    <input type="checkbox" name="checkbox_payment" checked="checked" value="">
-                                    Jeg har læst og forstået <a href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
+                                    <input class="m-r1" type="checkbox" name="checkbox_payment" value="">
+                                    Jeg har læst og forstået <a  class="col-pink" href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
                                 </label>
                             </div>
                         </div>
@@ -600,7 +594,7 @@
                 div +=
                     "<div class='checkout_box_radio-button'>" +
                     "<label class='container'>" +
-                    "<input type='radio' name='checkbox_Pakkeshops' checked='checked' value='Delivery_afhent_i_butik' >" +
+                    "<input type='radio' name='checkbox_Pakkeshops' value='Delivery_afhent_i_butik' >" +
                     "<span class='checkmark'>" + "</span>" +
                     "</label>" +
                     "<div><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
@@ -618,6 +612,8 @@
                 map.fitBounds(bounds);
             }
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
+            $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
+            $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").addClass("checkout_box_radio-button--checked");
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvmqdXjeCvqLR0o-Ncc29xQ1uWSo4c4c&callback=initMap" async defer></script>

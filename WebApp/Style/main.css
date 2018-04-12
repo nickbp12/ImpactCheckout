@@ -372,6 +372,9 @@ input#bynavn, #bynavn.counter-plus, #bynavn.counter-minus {
 div.checkout_box_radio-button > input, div.checkout_box_radio-button > .counter-plus, div.checkout_box_radio-button > .counter-minus, div.checkout_box_radio-button > div {
   margin: 0 10px; }
 
+.checkout_box_radio-button--checked {
+  background: #f2f1f1; }
+
 .checkout_box_img {
   width: 50px; }
 
@@ -381,8 +384,9 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > .counter-
 
 .checkout_box_bekraeft_img {
   display: flex;
-  width: 12%;
-  justify-content: space-around; }
+  width: 30%;
+  justify-content: space-between;
+  margin-top: 20px; }
 
 .checkout_box_bekraeft_img img {
   height: 20px; }
