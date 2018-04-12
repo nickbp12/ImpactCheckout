@@ -475,7 +475,10 @@ label.container {
       background-color: #eb5369; }
   .gls_pakke_soeg button {
     width: 100%;
-    cursor: pointer; }
+    cursor: pointer;
+    background: #a9abac;
+    font-weight: 600;
+    font-size: 1.2rem; }
 
 input[type="submit"]:disabled, [type="submit"].counter-plus:disabled, [type="submit"].counter-minus:disabled {
   background-color: #a9abac; }
@@ -486,4 +489,9 @@ input[type="submit"], [type="submit"].counter-plus, [type="submit"].counter-minu
 #myMap1 {
   width: 100%;
   height: 500px; }
+
+#checkout-summary.fixed {
+  position: fixed;
+  top: 0;
+  width: 400px; }
 

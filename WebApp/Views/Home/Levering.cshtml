@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="checkout-grid grid m-t2">
-                <main>
+                <main id="checkoutmain">
                     <section class="checkout-section">
                         <div class="checkout-header">
                             <h2>Kundeoplysninger</h2>
@@ -262,14 +262,12 @@
                         </div>
                         <div class="checkout-container">
                             <div class="checkout-form">
-                                <div class="checkout-form-inputs">
-                                    <div class="checkout-form-input-container">
-                                        <input type="checkbox" name="klub" id="klub" />
+                                    <div class="flex m-b1 m-t2">
+                                        <input class="m-r1" type="checkbox" name="klub" id="klub" />
                                         <label for="klub">Ja tak, jeg vil gerne v&#230;re medlem af klub Bog &#38; idé </label>
-                                        <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
-                                        <a href="#">L&#230;s mere</a>
                                     </div>
-                                </div>
+                                    <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
+                                    <a href="#">L&#230;s mere</a>
                             </div>
                         </div>
                     </section>
@@ -306,7 +304,7 @@
                     </section>
                 </main>
                 <aside>
-                    <div class="summary-contain no-grid bg-white">
+                    <div class="summary-contain no-grid bg-white" id="checkout-summary">
                         <div class="summary no-border">
                             <div class="checkout-header text-a-c border m-b1 no-padding">
                                 <h2 class="m-b1">Ordre oversigt</h2>
@@ -535,6 +533,21 @@
             elem.removeClass("valError");
             elem.siblings(".valErrorMsg").fadeOut(200);
         }
+        //Scoll fixed ordre oversigt
+        $(window).scroll(function () {
+            var wScroll = $(window).scrollTop();
+
+            var $checkSum = $("#checkout-summary");
+            var $checkoutmain = $("#checkoutmain");
+            var checkScroll = $checkoutmain.offset().top - wScroll;
+            //action
+            if (checkScroll <= 0) {
+                $checkSum.addClass("fixed");
+            }
+            else {
+                $checkSum.removeClass("fixed");
+            }
+        })
     </script>
     <script>
         var map;

@@ -655,6 +655,9 @@ label.container {
     button {
         width: 100%;
         cursor: pointer;
+        background: #a9abac;
+        font-weight: 600;
+        font-size: 1.2rem;
     }
 }
 
@@ -673,4 +676,10 @@ input[type="submit"] {
 #myMap1 {
     width: 100%;
     height: 500px;
+}
+
+#checkout-summary.fixed {
+    position: fixed;
+    top: 0;
+    width: 400px;
 }
