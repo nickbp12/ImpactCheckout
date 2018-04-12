@@ -1,0 +1,117 @@
+﻿<style>
+    #myMap1 {
+        width: 500px;
+        height: 500px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    tr td {
+        padding: 10px;
+        border-bottom: 1px solid #888;
+    }
+</style>
+
+<section id="checkout-section">
+    <div class="checkout-header">
+        @* Header *@
+        <h2>
+            Vælg din GLS Pakkeshop
+        </h2>
+    </div>
+    <input id="ZipInput" type="text" maxlength="4" name="ZipCode" value="" placeholder="Postnr." />
+    <button type="button" onclick="loadDoc()">Søg</button>
+    <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
+    <br><br>
+    <div id="checkout_box_container"></div>
+
+
+
+    <div id="myMap1"></div>
+
+</section>
+
+<script>
+        var map;
+        var markers = [];
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('myMap1'), {
+                maxZoom: 16,
+                center: { lat: 55.5, lng: 11.5 },
+                zoom: 6,
+                MapTypeId: google.maps.MapTypeId.HYBRID, // ROADMAP TEARRAIN SATELLITE HYBRID
+                disableDefaultUI: true, // Slå alle kontrollerne til
+                zoomControl: true,
+                mapTypeControl: true,
+                streetViewControl: true,
+                rotateControl: true,
+                scaleControl: true,
+                fullscreenControl: true,
+                overviewMapControl: true,
+            });
+
+        }
+
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            // http://www.gls.dk/webservices_v4/wsShopFinder.asmx/SearchNearestParcelShops?street=S%C3%B8renFrichsVej44d&zipcode=8230&countryIso3166A2=dk&Amount=1
+            var ZipCode = document.getElementById("ZipInput").value;
+            var XmlUrl = "http://www.gls.dk/webservices_v4/wsShopFinder.asmx/GetParcelShopsInZipcode?zipcode=" + ZipCode + "&countryIso3166A2=dk";
+            xhttp.open("GET", XmlUrl, true);
+            xhttp.send();
+        }
+
+        function loadDoc8230() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET", "http://www.gls.dk/webservices_v4/wsShopFinder.asmx/SearchNearestParcelShops?street=S%C3%B8renFrichsVej44d&zipcode=8230&countryIso3166A2=dk&Amount=3", true);
+            xhttp.send();
+        }
+
+        function myFunction(xml) {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+            var i;
+            var bounds = new google.maps.LatLngBounds();
+            var xmlDoc = xml.responseXML;
+            //var table = "<tr><th>Sted</th><th>Adresse</th><th>By</th></tr>";
+            var div = "";
+            var x = xmlDoc.getElementsByTagName("PakkeshopData");
+            for (i = 0; i < x.length; i++) {
+                div +=
+                    "<div class='checkout_box_radio-button'>" +
+                    "<label class='container'>" +
+                    "<input type='radio' name='checkbox_delivery' checked='checked' value='Delivery_afhent_i_butik' >" +
+                    "<span class='checkmark'>" + "</span>" +
+                    "</label>" +
+                    "<div><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
+                "<div><div>" + "Ma-Lø: 08:00 - 21:00" + "</div></div>" + "Sø: 08:00 - 19:00" + "</div></div>";
+
+                var myLatlng = new google.maps.LatLng(x[i].getElementsByTagName("Latitude")[0].childNodes[0].nodeValue, x[i].getElementsByTagName("Longitude")[0].childNodes[0].nodeValue);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue
+
+                });
+                bounds.extend(marker.position);
+                markers.push(marker);
+                map.fitBounds(bounds);
+            }
+            document.getElementById("checkout_box_container").innerHTML = div;
+        }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvmqdXjeCvqLR0o-Ncc29xQ1uWSo4c4c&callback=initMap" async defer></script>

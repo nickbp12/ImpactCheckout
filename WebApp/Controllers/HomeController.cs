@@ -48,5 +48,10 @@ namespace WebApp.Controllers
         {
             return View();
         }
+
+        public ActionResult GLS()
+        {
+            return View();
+        }
     }
 }

@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Style\flex.css" />
     <Content Include="Style\input.css" />
     <Content Include="Style\main.css">
@@ -143,6 +144,7 @@
     <Content Include="Style\main.scss" />
     <Content Include="Views\Home\Levering.cshtml" />
     <Content Include="Views\Home\Nope.cshtml" />
+    <Content Include="Views\Home\GLS.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
