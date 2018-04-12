@@ -3,3 +3,4 @@
     $(this).addClass("checkout_box_radio-button--checked");
     $(this).siblings().removeClass("checkout_box_radio-button--checked");
 });
+
