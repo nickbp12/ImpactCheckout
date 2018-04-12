@@ -1,0 +1,173 @@
+﻿
+<style>
+    #checkout_box_container {
+        width: 100%;
+    }
+
+    .checkout_box_radio-button {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        border-top: 1px solid #e4e2e3;
+    }
+
+    div.checkout_box_radio-button > input, div.checkout_box_radio-button > div {
+        margin: 0 10px;
+    }
+
+    .checkout_box_img {
+        width: 50px;
+    }
+
+        .checkout_box_img img {
+            width: 100%;
+        }
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 19px;
+        width: 19px;
+        background-color: white;
+        border: 1px solid #999;
+        border-radius: 50%;
+    }
+
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    .container input:checked ~ .checkmark {
+        background-color: white;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .container .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: red;
+    }
+</style>
+
+<section id="checkout-section">
+    <div class="checkout-header">
+        @* Header *@
+        <h2>Leveringsoplysning</h2>
+    </div>
+
+    @* Container *@
+    <div id="checkout_box_container">
+
+        @* Radio button row 1 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_delivery" checked="checked" value="Delivery_afhent_i_butik">
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/BOI_logo-red.png?i=%7b06ECDC0D-AE8D-43C0-9031-4FAE9AE71018%7d" alt="Bog & Ide Logo" />
+            </div>
+            <div>
+                <div>Afhent fragtfrit i butik (0,00 DKK)</div>
+                <div>Du vælger selv i hvilken butik, du ønsker at hente din ordre</div>
+                <div>Leveringstid: 1-3 hverdage (du modtager en mail/SMS, når ordren ligger klar)</div>
+            </div>
+        </div>
+
+        @* Radio button row 2 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_glsPakkeshop" />
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
+            </div>
+            <div>
+                <div>GLS (19,00 DKK)</div>
+                <div>Sender til afhentning i over 800 GLS pakkeshops</div>
+                <div>Leveringstid: 1-3 hverdage</div>
+            </div>
+        </div>
+
+        @* Radio button row 3 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed" />
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
+            </div>
+            <div>
+                <div>GLS erhverv (29,95 DKK)</div>
+                <div>Sender til virksomhedsadresser</div>
+                <div>Leveringstid: 1-3 hverdage</div>
+            </div>
+        </div>
+
+        @* Radio button row 4 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed_privat" />
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
+            </div>
+            <div>
+                <div>Postnord (46,95 DKK)</div>
+                <div>Direkte levering på adressen (privat eller erhverv)</div>
+                <div>Leveringstid: 1-3 hverdage</div>
+            </div>
+        </div>
+
+        @* Radio button row 5 *@
+        <div class="checkout_box_radio-button">
+            <label class="container">
+                <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_postNPakkeboks" />
+                <span class="checkmark"></span>
+            </label>
+            <div class="checkout_box_img">
+                <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
+            </div>
+            <div>
+                <div>Postnord pakkeboks (34,95 DKK)</div>
+                <div>Levering til afhentning i pakkeboks</div>
+                <div>Leveringstid: 1-3 hverdage</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

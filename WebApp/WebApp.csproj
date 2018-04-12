@@ -145,6 +145,12 @@
     <Content Include="Views\Home\Levering.cshtml" />
     <Content Include="Views\Home\Nope.cshtml" />
     <Content Include="Views\Home\GLS.cshtml" />
+    <Content Include="Views\Home\BekraeftBestilling.cshtml" />
+    <Content Include="Views\Home\GlsFetch.cshtml" />
+    <Content Include="Views\Home\Kundeoplysninger.cshtml" />
+    <Content Include="Views\Home\Leveringsoplysninger.cshtml" />
+    <Content Include="Views\Home\OrdreOversigt.cshtml" />
+    <Content Include="Views\Home\VaelgBetalingsmetode.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
