@@ -144,6 +144,7 @@
     <Content Include="Style\main.scss" />
     <Content Include="Views\Home\Levering.cshtml" />
     <Content Include="Views\Home\Nope.cshtml" />
+    <Content Include="Views\Home\GLS.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
