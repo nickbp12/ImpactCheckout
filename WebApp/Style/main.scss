@@ -18,6 +18,14 @@
 $grey: #a9abac;
 $pink: rgb(235, 83, 105);
 
+input.valError {
+    border: red 1px solid;
+}
+
+input.valSuccess {
+    border: green 1px solid;
+}
+
 .bg-white {
     background-color: white;
 }
@@ -56,9 +64,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .flex {
     display: flex;
-
+    width: 100%;
     &.sb {
         justify-content: space-between;
+    }
+    &.no-100width {
+        width: auto;
     }
 }
 
@@ -446,11 +457,24 @@ table {
     } 
 }
 
+input,textarea {
+    border: 1px solid $grey;
+}
+
+input#postnr {
+    
+}
+
+input#bynavn {
+    cursor: default;
+    pointer-events: none;
+    background: #f2f1f1;
+}
+
 .checkout-form-input-container {
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
-    padding: 15px;
+    width: 100%;
 }
 
 .input-container-row {
