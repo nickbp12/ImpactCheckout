@@ -18,6 +18,10 @@
 $grey: #a9abac;
 $pink: rgb(235, 83, 105);
 
+.bg-white {
+    background-color: white;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -164,7 +168,9 @@ table {
         font-size: 12px;
     }
 }
-
+.text-a-c {
+    text-align: center;
+}
 .summary-contain {
     display: grid;
     grid-template-columns: 45% 55%;
@@ -194,6 +200,14 @@ table {
             display: block;
             font-size: 1rem;
         }
+
+        &.no-border {
+            border: 0px !important;
+        }
+    }
+
+    &.no-grid {
+        display: block;
     }
 }
 
@@ -381,20 +395,40 @@ table {
     box-sizing: border-box;
 }
 
+.no-padding {
+    padding: 0px !important;
+}
 
+.no-border {
+    border: 0px !important;
+}
+
+.flex-g {
+    flex-grow: 1;
+}
 
 .bg-grey {
     background-color: #e4e2e3;
+}
+
+.checkout-grid {
+    grid-template-columns: 1fr 400px;
+    grid-column-gap: 20px;
+}
+.grid {
+    display: grid;
 }
 
 .checkout-section {
     background-color: white;
     max-width: 800px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .checkout-header {
-    
+    border-bottom: 1px $grey solid;
+    padding-bottom: 20px;
 
     h2 {
         font-size: 2.2rem;
@@ -534,6 +568,6 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > div {
 }
 
 #myMap1 {
-    width: 500px;
+    width: 100%;
     height: 500px;
 }

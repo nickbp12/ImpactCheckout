@@ -20,343 +20,355 @@
 <body class="bg-grey">
     <div class="wrapper">
         <form action="/Levering" method="post">
-            <div class="grid">
-                <div class="kurv">
-                    <div class="path"><span>1. Indkøbskurv / </span>2. Leveringsoplysninger</div>
-                    <h1 class="pageTitle">Leveringsoplysninger</h1>
-                    <div class="flex sb">
-                        <div><span class="fa-icon m-r1">&#xf0a8;</span><span>Tilbage til Indkøbskurv</span></div>
-                    </div>
+            <div class="kurv">
+                <div class="path"><span>1. Indkøbskurv / </span>2. Leveringsoplysninger</div>
+                <h1 class="pageTitle">Leveringsoplysninger</h1>
+                <div class="flex sb">
+                    <div><span class="fa-icon m-r1">&#xf0a8;</span><span>Tilbage til Indkøbskurv</span></div>
                 </div>
-
-                <section class="checkout-section">
-                    <div class="checkout-header">
-                        <h2>Kundeoplysninger</h2>
-                    </div>
-                    <div class="checkout-container">
-                        <p class="checkout-main-text"><strong>Dine oplysninger:</strong></p>
-                        <div class="checkout-form">
-                            <div class="checkout-form-inputs">
-                                <div class="checkout-form-input-container">
-                                    <label for="navn">Navn*</label>
-                                    <input autofocus required type="text" id="navn" name="Navn" value="@Request["Navn"]" data-val="true" />
-                                </div>
-                                <div class="checkout-form-input-container">
-                                    <label for="firmanavn">Evt. Firmanavn</label>
-                                    <input type="text" id="firmanavn" name="Firmanavn" value="@Request["Firmanavn"]" />
-                                </div>
-                                <div class="checkout-form-input-container">
-                                    <label for="addresse">Addresse*</label>
-                                    <input required type="text" id="addresse" name="Addresse" value="@Request["Addresse"]" data-val="true" />
-                                </div>
-                                <div class="flex">
-                                    <div class="checkout-form-input-container input-container-row input-container-no-inset">
+            </div>
+            <div class="checkout-grid grid m-t2">
+                <main>
+                    <section class="checkout-section">
+                        <div class="checkout-header">
+                            <h2>Kundeoplysninger</h2>
+                        </div>
+                        <div class="checkout-container">
+                            <p class="checkout-main-text p-t2"><strong>Dine oplysninger:</strong></p>
+                            <div class="checkout-form">
+                                <div class="checkout-form-inputs">
+                                    <div class="flex">
                                         <div class="checkout-form-input-container">
-                                            <label for="postnr">Post nr*</label>
-                                            <input maxlength="4" required type="text" id="postnr" name="Postnr" value="@Request["Postnr"]" data-val="true" />
+                                            <label for="navn">Navn*</label>
+                                            <input autofocus required type="text" id="navn" name="Navn" value="@Request["Navn"]" data-val="true" />
                                         </div>
                                         <div class="checkout-form-input-container">
-                                            <label for="bynavn">By*</label>
-                                            <input required readonly type="text" id="bynavn" name="Bynavn" value="@Request["Bynavn"]" data-val="true" />
+                                            <label for="firmanavn">Evt. Firmanavn</label>
+                                            <input type="text" id="firmanavn" name="Firmanavn" value="@Request["Firmanavn"]" />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-g">
+                                        <div class="checkout-form-input-container">
+                                            <label for="addresse">Addresse*</label>
+                                            <input required type="text" id="addresse" name="Addresse" value="@Request["Addresse"]" data-val="true" />
+                                        </div>
+                                        <div class="flex">
+                                            <div class="checkout-form-input-container input-container-row input-container-no-inset">
+                                                <div class="checkout-form-input-container">
+                                                    <label for="postnr">Post nr*</label>
+                                                    <input maxlength="4" required type="text" id="postnr" name="Postnr" value="@Request["Postnr"]" data-val="true" />
+                                                </div>
+                                                <div class="checkout-form-input-container">
+                                                    <label for="bynavn">By*</label>
+                                                    <input required readonly type="text" id="bynavn" name="Bynavn" value="@Request["Bynavn"]" data-val="true" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="checkout-form-input-container">
+                                            <label for="email">Email*</label>
+                                            <input required type="email" id="email" name="Email" value="@Request["Email"]" data-val="true" />
+                                        </div>
+                                        <div class="checkout-form-input-container">
+                                            <label for="mobilnr">Mobil nr*</label>
+                                            <input maxlength="8" required type="text" id="mobilnr" name="Mobilnr" value="@Request["Mobilnr"]" data-val="true" />
+                                        </div>
+                                        <span>@Html.ValidationSummary()</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-section">
+                        <div class="checkout-header no-border">
+                            @* Header *@
+                            <h2>Leveringsoplysning</h2>
+                        </div>
+
+                        @* Container *@
+                        <div id="checkout_box_container">
+
+                            @* Radio button row 1 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_delivery" checked="checked" value="Delivery_afhent_i_butik">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/BOI_logo-red.png?i=%7b06ECDC0D-AE8D-43C0-9031-4FAE9AE71018%7d" alt="Bog & Ide Logo" />
+                                </div>
+                                <div>
+                                    <div>Afhent fragtfrit i butik (0,00 DKK)</div>
+                                    <div>Du vælger selv i hvilken butik, du ønsker at hente din ordre</div>
+                                    <div>Leveringstid: 1-3 hverdage (du modtager en mail/SMS, når ordren ligger klar)</div>
+                                </div>
+                            </div>
+
+                            @* Radio button row 2 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_glsPakkeshop" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
+                                </div>
+                                <div>
+                                    <div>GLS (19,00 DKK)</div>
+                                    <div>Sender til afhentning i over 800 GLS pakkeshops</div>
+                                    <div>Leveringstid: 1-3 hverdage</div>
+                                </div>
+                            </div>
+
+                            @* Radio button row 3 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
+                                </div>
+                                <div>
+                                    <div>GLS erhverv (29,95 DKK)</div>
+                                    <div>Sender til virksomhedsadresser</div>
+                                    <div>Leveringstid: 1-3 hverdage</div>
+                                </div>
+                            </div>
+
+                            @* Radio button row 4 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed_privat" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
+                                </div>
+                                <div>
+                                    <div>Postnord (46,95 DKK)</div>
+                                    <div>Direkte levering på adressen (privat eller erhverv)</div>
+                                    <div>Leveringstid: 1-3 hverdage</div>
+                                </div>
+                            </div>
+
+                            @* Radio button row 5 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_postNPakkeboks" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
+                                </div>
+                                <div>
+                                    <div>Postnord pakkeboks (34,95 DKK)</div>
+                                    <div>Levering til afhentning i pakkeboks</div>
+                                    <div>Leveringstid: 1-3 hverdage</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    @* Starten på GLS Søgning *@
+
+                    <section class="checkout-section">
+                        <div class="checkout-header no-border">
+                            @* Header *@
+                            <h2>
+                                Vælg din GLS Pakkeshop
+                            </h2>
+                        </div>
+                        <input id="ZipInput" type="text" maxlength="4" name="ZipCode" value="" placeholder="Postnr." />
+                        <button type="button" onclick="loadDoc()">Søg</button>
+                        <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
+                        <br><br>
+                        <div id="checkout_box_container"></div>
+
+
+
+                        <div id="myMap1"></div>
+
+                    </section>
+
+                    @* Slutning på GLS Søgning *@
+
+                    <section class="checkout-section">
+                        <div class="checkout-header no-border">
+                            @* Header *@
+                            <h2>Vælg Betalingsmetode</h2>
+                        </div>
+
+                        @* Container *@
+                        <div id="checkout_box_container">
+
+                            @* Radio button row 1 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_payment" checked="checked" value="Payment_Betalingskort">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/betalingskort-new.png?i=%7b91153787-C684-4AF1-A5FD-5ECB5B9CD34A%7d" alt="Betalingskort" />
+                                </div>
+                                <div>
+                                    <div>Betalingskort (0,00 kr)</div>
+                                    <div>Dankort, VISA/Dankort, MasterCard, VisaElektron</div>
+                                </div>
+                            </div>
+
+                            @* Radio button row 2 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_payment" value="Payment_Mobilepay" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/mobile-pay-logo.png?i=%7b4915B6A9-0AD8-4253-8C2E-B62D6C3D5E3A%7d" alt="Mobilepay" />
+                                </div>
+                                <div>
+                                    <div>MobilePay (0,00 kr.)</div>
+                                    <div>MobilePay</div>
+                                </div>
+                            </div>
+
+                            @* Radio button row 3 *@
+                            <div class="checkout_box_radio-button">
+                                <label class="container">
+                                    <input type="radio" name="checkbox_payment" value="Payment_Gavekort" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checkout_box_img">
+                                    <img src="https://www.bog-ide.dk/scommerce/images/gavekort_bog-og-ide.png?i=%7bD4D49845-E774-45DE-839E-F5187A0AA594%7d" alt="Gavekort" />
+                                </div>
+                                <div>
+                                    <div>Gavekort (0,00 kr)</div>
+                                    <div>Gavekort med QR-kode</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="checkout-section">
+                        <div class="checkout-header">
+                            <h2>Opn&#229; fordele med klub Bog &#38; idé</h2>
+                        </div>
+                        <div class="checkout-container">
+                            <div class="checkout-form">
+                                <div class="checkout-form-inputs">
+                                    <div class="checkout-form-input-container">
+                                        <input type="checkbox" name="klub" id="klub" />
+                                        <label for="klub">Ja tak, jeg vil gerne v&#230;re medlem af klub Bog &#38; idé </label>
+                                        <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
+                                        <a href="#">L&#230;s mere</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-section">
+                        <div class="checkout-header">
+                            @* Header *@
+                            <h2>Bekræft bestilling</h2>
+                        </div>
+
+                        @* Container *@
+                        <div id="checkout_box_container">
+
+                            @* Checkout row 1 *@
+                            <div class="checkout_box_checkbox">
+                                <label>
+                                    <input type="checkbox" name="checkbox_payment" checked="checked" value="">
+                                    Jeg har læst og forstået <a href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="checkout-form-input-container submit">
+                            <input disabled type="submit" name="btnSubmit" value="Gå til sikker betalling" />
+                        </div>
+
+                        <div class="checkout_box_bekraeft_img">
+                            <img src="https://www.bog-ide.dk/scommerce/images/logo_22142.png?i=%7bF5DC7D57-14D8-4CBC-A1CA-01DA85A7C116%7d" alt="Betalingskort" />
+                            <img src="https://www.bog-ide.dk/scommerce/images/verisign-secured-logo.jpg?i=%7b1208C0D6-EE13-4093-818D-62046A6AE7E1%7d" alt="Betalingskort" />
+                            <img src="https://www.bog-ide.dk/scommerce/images/mastercardsecurecode.png?i=%7b1570FEA8-551F-4F4C-A2DD-3B1A9913D0CF%7d" alt="Betalingskort" />
+                            <img src="https://www.bog-ide.dk/scommerce/images/verified_by_visa.jpg?i=%7b906AEDE6-8101-46CB-81F0-B505AD40C05D%7d" alt="Betalingskort" />
+                        </div>
+
+                    </section>
+                </main>
+                <aside>
+                    <div class="summary-contain no-grid bg-white">
+                        <div class="summary no-border">
+                            <div class="checkout-header text-a-c border m-b1 no-padding">
+                                <h2 class="m-b1">Order oversigt</h2>
+                                <p class="m-b1">4 varer</p>
+                            </div>
+                            <div class="border p-b1" data-productID="1">
+                                <div>
+                                    <div class="product-info">
+                                        <div>2 x Nicolas' hemmelighed vol. 4</div>
+                                        <div class="flex sb">
+                                            <div class="summary-inklmoms col-grey">Leveringstid: 1 - 14 dage</div>
+                                            <span id="summarymsrp"><span>479.98</span> DKK</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="checkout-form-input-container">
-                                    <label for="email">Email*</label>
-                                    <input required type="email" id="email" name="Email" value="@Request["Email"]" data-val="true" />
-                                </div>
-                                <div class="checkout-form-input-container">
-                                    <label for="mobilnr">Mobil nr*</label>
-                                    <input maxlength="8" required type="text" id="mobilnr" name="Mobilnr" value="@Request["Mobilnr"]" data-val="true" />
-                                </div>
-                                <span>@Html.ValidationSummary()</span>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="summary-contain" style="width: 750px;">
-                    <div></div>
-                    <div class="summary">
-                        <div class="border p-b1" data-productID="1">
-                            <div>
-                                <div class="product-info">
-                                    <div>2 x Nicolas' hemmelighed vol. 4</div>
-                                    <div class="flex sb">
-                                        <div class="summary-inklmoms col-grey">Leveringstid: 1 - 14 dage</div>
-                                        <span id="summarymsrp"><span>479.98</span> DKK</span>
+                            <div class="border p-b1 p-t1" data-productID="2">
+                                <div>
+                                    <div class="product-info">
+                                        <div>1 x Bills hemmelighed vol. 2</div>
+                                        <div class="flex sb">
+                                            <div class="summary-inklmoms col-grey">Leveringstid: 1 - 10 dage</div>
+                                            <span id="summarymsrp"><span>219.99</span> DKK</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="border p-b1 p-t1" data-productID="2">
-                            <div>
-                                <div class="product-info">
-                                    <div>1 x Bills hemmelighed vol. 2</div>
-                                    <div class="flex sb">
-                                        <div class="summary-inklmoms col-grey">Leveringstid: 1 - 10 dage</div>
-                                        <span id="summarymsrp"><span>219.99</span> DKK</span>
+                            <div class="border p-b1 p-t1" data-productID="3">
+                                <div>
+                                    <div class="product-info">
+                                        <div>1 x Stevens nedtur vol. 1</div>
+                                        <div class="flex sb">
+                                            <div class="summary-inklmoms col-grey">Leveringstid: 1 - 30 dage</div>
+                                            <span id="summarymsrp"><span>119.99</span> DKK</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="border p-b1 p-t1" data-productID="3">
-                            <div>
-                                <div class="product-info">
-                                    <div>1 x Stevens nedtur vol. 1</div>
-                                    <div class="flex sb">
-                                        <div class="summary-inklmoms col-grey">Leveringstid: 1 - 30 dage</div>
-                                        <span id="summarymsrp"><span>119.99</span> DKK</span>
-                                    </div>
+                            <div class="border p-b1 p-t1">
+                                <div class="flex sb">
+                                    <span>Samlet vejl. udsalgspris</span>
+                                    <span id="summarymsrp"><span>819.96</span> DKK</span>
+                                </div>
+                                <div class="flex sb">
+                                    <span>Heraf moms</span>
+                                    <span id="summaryMoms"><span>163.99</span> DKK</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="border p-b1 p-t1">
-                            <div class="flex sb">
-                                <span>Samlet vejl. udsalgspris</span>
-                                <span id="summarymsrp"><span>819.96</span> DKK</span>
+                            <div class="flex sb p-t1 p-b1 border">
+                                <span>Levering (Afhent fragtfrit i butik)</span>
+                                <span>0,00 DKK</span>
                             </div>
-                            <div class="flex sb">
-                                <span>Heraf moms</span>
-                                <span id="summaryMoms"><span>163.99</span> DKK</span>
-                            </div>
-                        </div>
-                        <div class="flex sb p-t1 p-b1 border">
-                            <span>Levering (Afhent fragtfrit i butik)</span>
-                            <span>0,00 DKK</span>
-                        </div>
-                        <div class="flex sb p-t1 p-b1 dborder">
-                            <span class="summary-priceText"><strong>Pris i alt</strong></span>
-                            <span>
-                                <strong id="summaryTotalPrice"><span>819.96</span> DKK</strong>
-                                <br />
-                                <span class="col-grey summary-inklmoms">inkl. moms</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <section class="checkout-section">
-                    <div class="checkout-header">
-                        @* Header *@
-                        <h2>Leveringsoplysning</h2>
-                    </div>
-
-                    @* Container *@
-                    <div id="checkout_box_container">
-
-                        @* Radio button row 1 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_delivery" checked="checked" value="Delivery_afhent_i_butik">
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/BOI_logo-red.png?i=%7b06ECDC0D-AE8D-43C0-9031-4FAE9AE71018%7d" alt="Bog & Ide Logo" />
-                            </div>
-                            <div>
-                                <div>Afhent fragtfrit i butik (0,00 DKK)</div>
-                                <div>Du vælger selv i hvilken butik, du ønsker at hente din ordre</div>
-                                <div>Leveringstid: 1-3 hverdage (du modtager en mail/SMS, når ordren ligger klar)</div>
-                            </div>
-                        </div>
-
-                        @* Radio button row 2 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_glsPakkeshop" />
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
-                            </div>
-                            <div>
-                                <div>GLS (19,00 DKK)</div>
-                                <div>Sender til afhentning i over 800 GLS pakkeshops</div>
-                                <div>Leveringstid: 1-3 hverdage</div>
-                            </div>
-                        </div>
-
-                        @* Radio button row 3 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed" />
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/gls-logo-positive-rgb-download-11622.png?i=%7bF672FBE4-64B4-437A-A71D-FC4DD37ECA29%7d" alt="Gls Logo" />
-                            </div>
-                            <div>
-                                <div>GLS erhverv (29,95 DKK)</div>
-                                <div>Sender til virksomhedsadresser</div>
-                                <div>Leveringstid: 1-3 hverdage</div>
-                            </div>
-                        </div>
-
-                        @* Radio button row 4 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_delivery" value="Delivery_direkte_til_virksomhed_privat" />
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
-                            </div>
-                            <div>
-                                <div>Postnord (46,95 DKK)</div>
-                                <div>Direkte levering på adressen (privat eller erhverv)</div>
-                                <div>Leveringstid: 1-3 hverdage</div>
-                            </div>
-                        </div>
-
-                        @* Radio button row 5 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_delivery" value="Delivery_afhent_i_postNPakkeboks" />
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/postnord-logo.png?i=%7bDC268BF2-E29F-4546-982C-D5DAE53CCB72%7d" alt="Postnord Logo" />
-                            </div>
-                            <div>
-                                <div>Postnord pakkeboks (34,95 DKK)</div>
-                                <div>Levering til afhentning i pakkeboks</div>
-                                <div>Leveringstid: 1-3 hverdage</div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-
-                @* Starten på GLS Søgning *@
-
-                <section class="checkout-section">
-                    <div class="checkout-header">
-                        @* Header *@
-                        <h2>
-                            Vælg din GLS Pakkeshop
-                        </h2>
-                    </div>
-                    <input id="ZipInput" type="text" maxlength="4" name="ZipCode" value="" placeholder="Postnr." />
-                    <button type="button" onclick="loadDoc()">Søg</button>
-                    <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
-                    <br><br>
-                    <div id="checkout_box_container"></div>
-
-
-
-                    <div id="myMap1"></div>
-
-                </section>
-
-                @* Slutning på GLS Søgning *@
-
-                <section class="checkout-section">
-                    <div class="checkout-header">
-                        @* Header *@
-                        <h2>Vælg Betalingsmetode</h2>
-                    </div>
-
-                    @* Container *@
-                    <div id="checkout_box_container">
-
-                        @* Radio button row 1 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_payment" checked="checked" value="Payment_Betalingskort">
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/betalingskort-new.png?i=%7b91153787-C684-4AF1-A5FD-5ECB5B9CD34A%7d" alt="Betalingskort" />
-                            </div>
-                            <div>
-                                <div>Betalingskort (0,00 kr)</div>
-                                <div>Dankort, VISA/Dankort, MasterCard, VisaElektron</div>
-                            </div>
-                        </div>
-
-                        @* Radio button row 2 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_payment" value="Payment_Mobilepay" />
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/mobile-pay-logo.png?i=%7b4915B6A9-0AD8-4253-8C2E-B62D6C3D5E3A%7d" alt="Mobilepay" />
-                            </div>
-                            <div>
-                                <div>MobilePay (0,00 kr.)</div>
-                                <div>MobilePay</div>
-                            </div>
-                        </div>
-
-                        @* Radio button row 3 *@
-                        <div class="checkout_box_radio-button">
-                            <label class="container">
-                                <input type="radio" name="checkbox_payment" value="Payment_Gavekort" />
-                                <span class="checkmark"></span>
-                            </label>
-                            <div class="checkout_box_img">
-                                <img src="https://www.bog-ide.dk/scommerce/images/gavekort_bog-og-ide.png?i=%7bD4D49845-E774-45DE-839E-F5187A0AA594%7d" alt="Gavekort" />
-                            </div>
-                            <div>
-                                <div>Gavekort (0,00 kr)</div>
-                                <div>Gavekort med QR-kode</div>
+                            <div class="flex sb p-t1 p-b1 dborder">
+                                <span class="summary-priceText"><strong>Pris i alt</strong></span>
+                                <span>
+                                    <strong id="summaryTotalPrice"><span>819.96</span> DKK</strong>
+                                    <br />
+                                    <span class="col-grey summary-inklmoms">inkl. moms</span>
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                </section>
-
-                <section class="checkout-section">
-                    <div class="checkout-header">
-                        <h2>Opn&#229; fordele med klub Bog &#38; idé</h2>
-                    </div>
-                    <div class="checkout-container">
-                        <div class="checkout-form">
-                            <div class="checkout-form-inputs">
-                                <div class="checkout-form-input-container">
-                                    <input type="checkbox" name="klub" id="klub" />
-                                    <label for="klub">Ja tak, jeg vil gerne v&#230;re medlem af klub Bog &#38; idé </label>
-                                    <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
-                                    <a href="#">L&#230;s mere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="checkout-section">
-                    <div class="checkout-header">
-                        @* Header *@
-                        <h2>Bekræft bestilling</h2>
-                    </div>
-
-                    @* Container *@
-                    <div id="checkout_box_container">
-
-                        @* Checkout row 1 *@
-                        <div class="checkout_box_checkbox">
-                            <label>
-                                <input type="checkbox" name="checkbox_payment" checked="checked" value="">
-                                Jeg har læst og forstået <a href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="checkout-form-input-container submit">
-                        <input disabled type="submit" name="btnSubmit" value="Gå til sikker betalling" />
-                    </div>
-
-                    <div class="checkout_box_bekraeft_img">
-                        <img src="https://www.bog-ide.dk/scommerce/images/logo_22142.png?i=%7bF5DC7D57-14D8-4CBC-A1CA-01DA85A7C116%7d" alt="Betalingskort" />
-                        <img src="https://www.bog-ide.dk/scommerce/images/verisign-secured-logo.jpg?i=%7b1208C0D6-EE13-4093-818D-62046A6AE7E1%7d" alt="Betalingskort" />
-                        <img src="https://www.bog-ide.dk/scommerce/images/mastercardsecurecode.png?i=%7b1570FEA8-551F-4F4C-A2DD-3B1A9913D0CF%7d" alt="Betalingskort" />
-                        <img src="https://www.bog-ide.dk/scommerce/images/verified_by_visa.jpg?i=%7b906AEDE6-8101-46CB-81F0-B505AD40C05D%7d" alt="Betalingskort" />
-                    </div>
-
-                </section>
+                </aside>
             </div>
         </form>
     </div>
