@@ -455,7 +455,7 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > .counter-
 label.container {
   cursor: pointer; }
 
-.checkout-btn {
+.checkout-btn, input[type="submit"]:disabled, [type="submit"].counter-plus:disabled, [type="submit"].counter-minus:disabled, input[type="submit"], [type="submit"].counter-plus, [type="submit"].counter-minus {
   height: 49px;
   width: 100%;
   color: white; }
@@ -476,6 +476,12 @@ label.container {
   .gls_pakke_soeg button {
     width: 100%;
     cursor: pointer; }
+
+input[type="submit"]:disabled, [type="submit"].counter-plus:disabled, [type="submit"].counter-minus:disabled {
+  background-color: #a9abac; }
+
+input[type="submit"], [type="submit"].counter-plus, [type="submit"].counter-minus {
+  background-color: #eb5369; }
 
 #myMap1 {
   width: 100%;

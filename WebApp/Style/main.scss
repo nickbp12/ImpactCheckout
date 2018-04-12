@@ -658,6 +658,18 @@ label.container {
     }
 }
 
+input[type="submit"]:disabled {
+    background-color: #a9abac;
+
+    @extend .checkout-btn;
+}
+
+input[type="submit"] {
+    background-color: #eb5369;
+
+    @extend .checkout-btn;
+}
+
 #myMap1 {
     width: 100%;
     height: 500px;
