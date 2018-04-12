@@ -188,10 +188,6 @@
                         <button type="button" onclick="loadDoc()">Søg</button>
                         <button type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
                         <br><br>
-<<<<<<< HEAD
-=======
-
->>>>>>> 2c4ba31bb62830c510616b3d703fed739d69c797
                         <div id="myMap1"></div>
                         <div id="checkout_box_container_pakkeshops"></div>
 
@@ -600,15 +596,15 @@
                     "<input type='radio' name='checkbox_Pakkeshops' value='Delivery_afhent_i_butik' >" +
                     "<span class='checkmark'>" + "</span>" +
                     "</label>" + "</div>" +
-                    "<div style='width: 55%'><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
+                    "<div style='width: 55%' class='m-b1'><div><strong>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</strong></div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
                     "<div style='width: 27%;'><div>" + "Ma-Lø: 08:00 - 21:00" + "</div><div>" + "Sø: 08:00 - 19:00" + "</div></div></div>";
 
                 var myLatlng = new google.maps.LatLng(x[i].getElementsByTagName("Latitude")[0].childNodes[0].nodeValue, x[i].getElementsByTagName("Longitude")[0].childNodes[0].nodeValue);
                 var marker = new google.maps.Marker({
                     position: myLatlng,
                     map: map,
+                    icon: 'https://www.bog-ide.dk/scommerce/images/find-store.png?i=%7b74CDFD30-55BF-4B2E-B7DE-119ABB62693C%7d',
                     title: x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue
-
                 });
                 bounds.extend(marker.position);
                 markers.push(marker);
