@@ -47,7 +47,7 @@
                                 </div>
                             </td>
                             <td>239.99 DKK</td>
-                            <td><div class="flex counter"><div class="counter-minus">-</div><input class="itemAmount" type="text" value="2" /><div class="counter-plus">+</div></div></td>
+                            <td><div class="flex counter"><div class="counter-minus">-</div><input class="itemAmount" maxlength="3" type="text" value="2" /><div class="counter-plus">+</div></div></td>
                             <td></td>
                             <td class="totalPrice"><span>479.98</span> DKK</td>
                         </tr>
@@ -63,7 +63,7 @@
                                 </div>
                             </td>
                             <td>219.99 DKK</td>
-                            <td><div class="flex counter"><div class="counter-minus">-</div><input class="itemAmount" type="text" value="1" /><div class="counter-plus">+</div></div></td>
+                            <td><div class="flex counter"><div class="counter-minus">-</div><input class="itemAmount" maxlength="3" type="text" value="1" /><div class="counter-plus">+</div></div></td>
                             <td></td>
                             <td class="totalPrice"><span>219.99</span> DKK</td>
                         </tr>
@@ -79,7 +79,7 @@
                                 </div>
                             </td>
                             <td>119.99 DKK</td>
-                            <td><div class="flex counter"><div class="counter-minus">-</div><input class="itemAmount" type="text" value="1" /><div class="counter-plus">+</div></div></td>
+                            <td><div class="flex counter"><div class="counter-minus">-</div><input class="itemAmount" maxlength="3" type="text" value="1" /><div class="counter-plus">+</div></div></td>
                             <td></td>
                             <td class="totalPrice"><span>119.99</span> DKK</td>
                         </tr>
@@ -132,7 +132,7 @@
         $(".counter-minus").click(function () {
             var thisInput = $(this).siblings("input");
             var itemAmount = parseInt(thisInput.val());
-            if (itemAmount > 1 && itemAmount <= 99) {
+            if (itemAmount > 1 && itemAmount <= 100) {
                 thisInput.val(itemAmount - 1);
                 updatePrices(thisInput);
             }
