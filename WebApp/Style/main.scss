@@ -649,6 +649,12 @@ label.container {
         button {
             width: 125px;
             background-color: #eb5369;
+            transition: .4s;
+
+            &:hover {
+                background-color: #e62541;
+                
+            }
         }
     }
 
@@ -658,7 +664,17 @@ label.container {
         background: #a9abac;
         font-weight: 600;
         font-size: 1.2rem;
+        transition: .4s;
+
+        &:hover {
+            background-color: #dddede;
+            
+        }
     }
+}
+
+.postnr {
+    width: 35%;
 }
 
 input[type="submit"]:disabled {
@@ -669,8 +685,15 @@ input[type="submit"]:disabled {
 
 input[type="submit"] {
     background-color: #eb5369;
+    cursor: pointer;
+    transition: .4s;
 
     @extend .checkout-btn;
+
+    &:hover {
+        background-color: #e62541;
+        
+    }
 }
 
 #myMap1 {

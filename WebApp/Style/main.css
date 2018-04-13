@@ -472,19 +472,32 @@ label.container {
       border: 1px solid rgba(169, 171, 172, 0.33); }
     .gls_pakke_soeg div button {
       width: 125px;
-      background-color: #eb5369; }
+      background-color: #eb5369;
+      transition: .4s; }
+      .gls_pakke_soeg div button:hover {
+        background-color: #e62541; }
   .gls_pakke_soeg button {
     width: 100%;
     cursor: pointer;
     background: #a9abac;
     font-weight: 600;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    transition: .4s; }
+    .gls_pakke_soeg button:hover {
+      background-color: #dddede; }
+
+.postnr {
+  width: 35%; }
 
 input[type="submit"]:disabled, [type="submit"].counter-plus:disabled, [type="submit"].counter-minus:disabled {
   background-color: #a9abac; }
 
 input[type="submit"], [type="submit"].counter-plus, [type="submit"].counter-minus {
-  background-color: #eb5369; }
+  background-color: #eb5369;
+  cursor: pointer;
+  transition: .4s; }
+  input[type="submit"]:hover, [type="submit"].counter-plus:hover, [type="submit"].counter-minus:hover {
+    background-color: #e62541; }
 
 #myMap1 {
   width: 100%;
