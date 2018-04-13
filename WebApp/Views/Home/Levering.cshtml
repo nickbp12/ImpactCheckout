@@ -209,7 +209,7 @@
                         <div id="checkout_box_container">
 
                             @* Radio button row 1 *@
-                            <div class="checkout_box_radio-button checkout_box_radio-button--checked"   >
+                            <div class="checkout_box_radio-button checkout_box_radio-button--checked">
                                 <label class="container">
                                     <input type="radio" name="checkbox_payment" checked="checked" value="Payment_Betalingskort">
                                     <span class="checkmark"></span>
@@ -262,12 +262,15 @@
                         </div>
                         <div class="checkout-container">
                             <div class="checkout-form">
-                                    <div class="flex m-b1 m-t2">
+                                <div class="flex m-b1 m-t2">
+                                    <label class="container" for="klub">
                                         <input class="m-r1" type="checkbox" name="klub" id="klub" />
-                                        <label for="klub">Ja tak, jeg vil gerne v&#230;re medlem af klub Bog &#38; idé </label>
-                                    </div>
-                                    <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
-                                    <a href="#">L&#230;s mere</a>
+                                        <span class="checkbox"></span>
+                                        Ja tak, jeg vil gerne v&#230;re medlem af klub Bog &#38; idé
+                                    </label>
+                                </div>
+                                <p>Som medlem modtager du en mail en gang i ugen, der indeholder bognyheder og fordelagtige tilbud.</p>
+                                <a class="col-pink" href="#">L&#230;s mere</a>
                             </div>
                         </div>
                     </section>
@@ -283,9 +286,10 @@
 
                             @* Checkout row 1 *@
                             <div class="checkout_box_checkbox m-b2 m-t2">
-                                <label>
+                                <label class="container">
                                     <input id="checkbox-terms" class="m-r1" type="checkbox" name="checkbox_payment" value="">
-                                    Jeg har læst og forstået <a  class="col-pink" href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
+                                    <span class="checkbox"></span>
+                                    Jeg har læst og forstået <a class="col-pink" href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
                                 </label>
                             </div>
                         </div>
@@ -633,7 +637,7 @@
                     map.fitBounds(bounds);
                     i + 1;
                 }
-			}
+            }
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").addClass("checkout_box_radio-button--checked");
