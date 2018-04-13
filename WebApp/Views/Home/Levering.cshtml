@@ -14,6 +14,7 @@
     </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Levering</title>
+    <link rel="icon" type="image/png" href="~/Content/favicon-32x32.ico" sizes="32x32">
     <link href="~/Style/main.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -24,7 +25,7 @@
                 <div class="path"><span>1. Indkøbskurv / </span>2. Leveringsoplysninger</div>
                 <h1 class="pageTitle">Leveringsoplysninger</h1>
                 <div class="flex sb">
-                    <div><a class="col-black" href="/"><span class="fa-icon m-r1">&#xf0a8;</span>Tilbage til Indkøbskurv</a></div>
+                    <div><a class="col-black" href="/"><span class="fa-icon m-r1 col-black">&#xf0a8;</span>Tilbage til Indkøbskurv</a></div>
                 </div>
             </div>
             <div class="checkout-grid grid m-t2">
@@ -668,7 +669,6 @@
                 }
 
             }
-            
 
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
