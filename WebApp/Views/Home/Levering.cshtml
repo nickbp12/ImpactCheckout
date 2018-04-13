@@ -192,7 +192,7 @@
                             <button class="checkout-btn no-border" type="button" onclick="loadDoc8230()">Find nærmeste GLS Pakkeshop</button>
                         </div>
                         <br><br>
-                        <div id="myMap1"></div>
+                        <div class="m-b1" id="myMap1"></div>
                         <div id="checkout_box_container_pakkeshops"></div>
 
                     </section>
@@ -284,7 +284,7 @@
                             @* Checkout row 1 *@
                             <div class="checkout_box_checkbox m-b2 m-t2">
                                 <label>
-                                    <input class="m-r1" type="checkbox" name="checkbox_payment" value="">
+                                    <input id="checkbox-terms" class="m-r1" type="checkbox" name="checkbox_payment" value="">
                                     Jeg har læst og forstået <a  class="col-pink" href="https://www.bog-ide.dk/kundeservice/handelsbetingelser">handelsbetingelserne</a>
                                 </label>
                             </div>
@@ -483,12 +483,16 @@
         $("input[type='submit']").click(function () {
             checkerror();
         });
+        $("#checkbox-terms").change(function () {
+            checkerror();
+        })
         function checkerror() {
             var errornumber = $(".valError").length;
             var successnumber = $(".valSuccess").length;
             var inputcounter = $("input[data-val='true']").length;
+            var terms = $("#checkbox-terms");
 
-            if (successnumber < inputcounter) {
+            if (successnumber < inputcounter || terms.prop("checked") == false) {
                 $("input[type = 'submit']").prop("disabled", true);
 
                 return false;
