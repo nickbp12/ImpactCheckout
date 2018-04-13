@@ -14,6 +14,7 @@
     </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Levering</title>
+    <link rel="icon" type="image/png" href="~/Content/favicon-32x32.ico" sizes="32x32">
     <link href="~/Style/main.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -660,7 +661,6 @@
                     $("#checkout_box_container_pakkeshops .checkout_box_radio-button[data-id='" + this.id + "']").addClass("checkout_box_radio-button--checked").find("input[type='radio']").prop("checked", true);                    
                 }
 
-            }
             }
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);

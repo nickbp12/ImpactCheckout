@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\favicon-32x32.ico" />
     <Content Include="Global.asax" />
     <Content Include="GoogleMapMarker\gls-logo-positive-rgb-download-11622.jpg" />
     <Content Include="Scripts\main.js" />
@@ -140,6 +141,7 @@
     <Content Include="fonts\muller-regular.otf" />
     <Content Include="fonts\breve-title-bold.otf" />
     <Content Include="fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <Content Include="Content\favicon-32x32.webp" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Style\main.scss" />
