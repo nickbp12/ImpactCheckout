@@ -622,8 +622,8 @@
                         "<input type='radio' name='checkbox_Pakkeshops' checked='checked' value='Delivery_afhent_i_butik' >" +
                         "<span class='checkmark'>" + "</span>" +
                         "</label>" +
-                        "<div><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
-                        "<div><div>" + "Ma-Lø: 08:00 - 21:00" + "</div></div>" + "Sø: 08:00 - 19:00" + "</div></div>";
+                        "<div style='width: 55%;'><div>" + x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("Streetname")[0].childNodes[0].nodeValue + "</div><div>" + x[i].getElementsByTagName("CityName")[0].childNodes[0].nodeValue + "</div></div>" +
+                        "<div style='width: 27%;'><div >" + "Ma-Lø: 08:00 - 21:00" + "</div><div>" + "Sø: 08:00 - 19:00" + "</div></div></div>";
 
                     var myLatlng = new google.maps.LatLng(x[i].getElementsByTagName("Latitude")[0].childNodes[0].nodeValue, x[i].getElementsByTagName("Longitude")[0].childNodes[0].nodeValue);
                     var marker = new google.maps.Marker({
@@ -633,39 +633,47 @@
                         icon: 'https://www.bog-ide.dk/scommerce/images/find-store.png?i=%7b74CDFD30-55BF-4B2E-B7DE-119ABB62693C%7d',
                         title: x[i].getElementsByTagName("CompanyName")[0].childNodes[0].nodeValue,
                         animation: google.maps.Animation.DROP
-                        
+
                     });
-                    marker.addListener('mouseover', addBounce);
-                    marker.addListener('mouseout', removeBounce);
+                    //marker.addListener('mouseover', addBounce);
+                    //marker.addListener('mouseout', removeBounce);
                     marker.addListener('click', AddChecked);
                     bounds.extend(marker.position);
                     markers.push(marker);
                     map.fitBounds(bounds);
-                    i + 1;
-                }
-                function addBounce() {                    
-                    if (this.id > 1) {
-                        this.setAnimation(google.maps.Animation.BOUNCE);
-                        this.setIcon("https://www.bog-ide.dk/scommerce/images/find-store-active.png?i=%7b8978F3EE-A399-4B65-8C39-6B1940D8B67F%7d")
+                    if (i == 0) {
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                        marker.setIcon("https://www.bog-ide.dk/scommerce/images/find-store-active.png?i=%7b8978F3EE-A399-4B65-8C39-6B1940D8B67F%7d")
                     }
+                    i + 1;                   
                 }
-                function removeBounce() {
-                    if (this.id > 1) {
-                        this.setAnimation();
-                        this.setIcon("https://www.bog-ide.dk/scommerce/images/find-store.png?i=%7b74CDFD30-55BF-4B2E-B7DE-119ABB62693C%7d")
-                    }
-                }
+                //function addBounce() {
+                //    if (this.id > 1) {
+                //        this.setIcon("https://www.bog-ide.dk/scommerce/images/find-store-active.png?i=%7b8978F3EE-A399-4B65-8C39-6B1940D8B67F%7d")
+                //    }
+                //}
+                //function removeBounce() {
+                //    if (this.id > 1) {
+                //        this.setAnimation(null);
+                //        this.setIcon("https://www.bog-ide.dk/scommerce/images/find-store.png?i=%7b74CDFD30-55BF-4B2E-B7DE-119ABB62693C%7d");
+                //    }
+                //}
                 function AddChecked() {
                     $("#checkout_box_container_pakkeshops .checkout_box_radio-button--checked").removeClass("checkout_box_radio-button--checked");
-                    $("#checkout_box_container_pakkeshops .checkout_box_radio-button[data-id='" + this.id + "']").addClass("checkout_box_radio-button--checked").find("input[type='radio']").prop("checked", true);                    
+                    $("#checkout_box_container_pakkeshops .checkout_box_radio-button[data-id='" + this.id + "']").addClass("checkout_box_radio-button--checked").find("input[type='radio']").prop("checked", true);
+                    this.setIcon("https://www.bog-ide.dk/scommerce/images/find-store-active.png?i=%7b8978F3EE-A399-4B65-8C39-6B1940D8B67F%7d");
+                    
+                    this.setAnimation(google.maps.Animation.BOUNCE);
+                    
                 }
 
             }
-            }
+            
+
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").addClass("checkout_box_radio-button--checked");
-        }       
+        }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvmqdXjeCvqLR0o-Ncc29xQ1uWSo4c4c&callback=initMap" async defer></script>
 </body>
