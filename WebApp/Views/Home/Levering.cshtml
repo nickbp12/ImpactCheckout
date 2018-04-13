@@ -59,7 +59,7 @@
                                             </div>
                                             <div class="flex">
                                                 <div class="checkout-form-input-container input-container-row input-container-no-inset m-b1">
-                                                    <div class="checkout-form-input-container m-r1">
+                                                    <div class="checkout-form-input-container m-r2 postnr">
                                                         <label for="postnr">Post nr*</label>
                                                         <input maxlength="4" required type="text" id="postnr" name="Postnr" value="@Request["Postnr"]" data-val="true" />
                                                     </div>
@@ -571,7 +571,6 @@
                 fullscreenControl: true,
                 overviewMapControl: true,
             });
-
         }
 
         function loadDoc() {
@@ -634,7 +633,7 @@
                     map.fitBounds(bounds);
                     i + 1;
                 }
-            }
+			}
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").addClass("checkout_box_radio-button--checked");
