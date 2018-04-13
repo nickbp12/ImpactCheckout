@@ -567,7 +567,6 @@
                 fullscreenControl: true,
                 overviewMapControl: true,
             });
-
         }
 
         function loadDoc() {
@@ -630,7 +629,7 @@
                     map.fitBounds(bounds);
                     i + 1;
                 }
-            }
+			}
             document.getElementById("checkout_box_container_pakkeshops").innerHTML = div;
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").find("input[type='radio']").prop("checked", true);
             $("#checkout_box_container_pakkeshops .checkout_box_radio-button:first").addClass("checkout_box_radio-button--checked");
