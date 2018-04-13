@@ -19,7 +19,7 @@ $grey: #a9abac;
 $pink: rgb(235, 83, 105);
 
 input.valError {
-    border: 1px solid red !important; 
+    border: 1px solid red !important;
 }
 
 input.valSuccess {
@@ -65,9 +65,11 @@ h1, h2, h3, h4, h5, h6 {
 .flex {
     display: flex;
     width: 100%;
+
     &.sb {
         justify-content: space-between;
     }
+
     &.no-100width {
         width: auto;
     }
@@ -179,9 +181,11 @@ table {
         font-size: 12px;
     }
 }
+
 .text-a-c {
     text-align: center;
 }
+
 .summary-contain {
     display: grid;
     grid-template-columns: 45% 55%;
@@ -402,6 +406,7 @@ table {
 .p-r5 {
     padding-right: 50px;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -436,17 +441,18 @@ input {
     height: 49.2px;
     padding: 0.625rem;
     border: 1px solid rgba(169, 171, 172, .33);
+}
 
-    &:focus {
-        border: 1px solid rgba(169, 171, 172, 1);
-        outline: none;
-    }
+input:focus {
+    border: 1px solid rgba(169, 171, 172, 1) !important;
+    outline: none;
 }
 
 .checkout-grid {
     grid-template-columns: 1fr 400px;
     grid-column-gap: 20px;
 }
+
 .grid {
     display: grid;
 }
@@ -475,15 +481,14 @@ input {
     &-inputs {
         display: flex;
         flex-wrap: wrap;
-    } 
+    }
 }
 
-input,textarea {
+input, textarea {
     border: 1px solid $grey;
 }
 
 input#postnr {
-    
 }
 
 input#bynavn {
@@ -621,7 +626,60 @@ label.container {
     cursor: pointer;
 }
 
+.checkout-btn {
+    height: 49px;
+    width: 100%;
+    color: white;
+}
+
+.gls_pakke_soeg {
+    width: 100%;
+
+    div {
+        padding-right: 33px;
+        width: 65%;
+
+        input {
+            width: 125px;
+            padding: 0.625rem;
+            color: black;
+            border: 1px solid rgba(169, 171, 172, .33);
+        }
+
+        button {
+            width: 125px;
+            background-color: #eb5369;
+        }
+    }
+
+    button {
+        width: 100%;
+        cursor: pointer;
+        background: #a9abac;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+}
+
+input[type="submit"]:disabled {
+    background-color: #a9abac;
+
+    @extend .checkout-btn;
+}
+
+input[type="submit"] {
+    background-color: #eb5369;
+
+    @extend .checkout-btn;
+}
+
 #myMap1 {
     width: 100%;
     height: 500px;
+}
+
+#checkout-summary.fixed {
+    position: fixed;
+    top: 0;
+    width: 400px;
 }

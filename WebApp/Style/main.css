@@ -310,9 +310,10 @@ input:-webkit-autofill, .counter-plus:-webkit-autofill, .counter-minus:-webkit-a
   height: 49.2px;
   padding: 0.625rem;
   border: 1px solid rgba(169, 171, 172, 0.33); }
-  .checkout-form-input-container input:focus, .checkout-form-input-container .counter-plus:focus, .checkout-form-input-container .counter-minus:focus {
-    border: 1px solid #a9abac;
-    outline: none; }
+
+input:focus, .counter-plus:focus, .counter-minus:focus {
+  border: 1px solid #a9abac !important;
+  outline: none; }
 
 .checkout-grid {
   grid-template-columns: 1fr 400px;
@@ -454,7 +455,43 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > .counter-
 label.container {
   cursor: pointer; }
 
+.checkout-btn, input[type="submit"]:disabled, [type="submit"].counter-plus:disabled, [type="submit"].counter-minus:disabled, input[type="submit"], [type="submit"].counter-plus, [type="submit"].counter-minus {
+  height: 49px;
+  width: 100%;
+  color: white; }
+
+.gls_pakke_soeg {
+  width: 100%; }
+  .gls_pakke_soeg div {
+    padding-right: 33px;
+    width: 65%; }
+    .gls_pakke_soeg div input, .gls_pakke_soeg div .counter-plus, .gls_pakke_soeg div .counter-minus {
+      width: 125px;
+      padding: 0.625rem;
+      color: black;
+      border: 1px solid rgba(169, 171, 172, 0.33); }
+    .gls_pakke_soeg div button {
+      width: 125px;
+      background-color: #eb5369; }
+  .gls_pakke_soeg button {
+    width: 100%;
+    cursor: pointer;
+    background: #a9abac;
+    font-weight: 600;
+    font-size: 1.2rem; }
+
+input[type="submit"]:disabled, [type="submit"].counter-plus:disabled, [type="submit"].counter-minus:disabled {
+  background-color: #a9abac; }
+
+input[type="submit"], [type="submit"].counter-plus, [type="submit"].counter-minus {
+  background-color: #eb5369; }
+
 #myMap1 {
   width: 100%;
   height: 500px; }
+
+#checkout-summary.fixed {
+  position: fixed;
+  top: 0;
+  width: 400px; }
 
