@@ -90,6 +90,10 @@ h1, h2, h3, h4, h5, h6 {
     color: $grey;
 }
 
+.col-black {
+    color: black;
+}
+
 .bg-pink {
     background-color: $pink;
 }
@@ -584,6 +588,50 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > div {
     cursor: pointer;
 }
 
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: white;
+    border: 1px solid #999;
+}
+
+.container .checkbox:after {
+    top: 1px;
+    left: 1px;
+    width: 15px;
+    height: 15px;
+    background: #eb5369;
+}
+
+.container:hover input ~ .checkbox {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkbox {
+    background-color: white;
+}
+
+.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkbox:after {
+    display: block;
+}
+
+.container .checkbox:after {
+    top: 1px;
+    left: 1px;
+    width: 15px;
+    height: 15px;
+    background: #eb5369;
+}
+
 .checkmark {
     position: absolute;
     top: 0;
@@ -593,6 +641,10 @@ div.checkout_box_radio-button > input, div.checkout_box_radio-button > div {
     background-color: white;
     border: 1px solid #999;
     border-radius: 50%;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
 }
 
 .container:hover input ~ .checkmark {
@@ -653,7 +705,6 @@ label.container {
 
             &:hover {
                 background-color: #e62541;
-                
             }
         }
     }
@@ -668,7 +719,6 @@ label.container {
 
         &:hover {
             background-color: #dddede;
-            
         }
     }
 }
@@ -679,8 +729,13 @@ label.container {
 
 input[type="submit"]:disabled {
     background-color: #a9abac;
+    cursor: default;
 
     @extend .checkout-btn;
+
+    &:hover {
+        background-color: #a9abac;
+    }
 }
 
 input[type="submit"] {
@@ -692,7 +747,6 @@ input[type="submit"] {
 
     &:hover {
         background-color: #e62541;
-        
     }
 }
 
@@ -703,6 +757,6 @@ input[type="submit"] {
 
 #checkout-summary.fixed {
     position: fixed;
-    top: 0;
+    top: 10px;
     width: 400px;
 }
